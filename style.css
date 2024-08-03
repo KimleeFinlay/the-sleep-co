@@ -16,6 +16,24 @@
 /*---------------------------- Universal styles & utility classes  --------------------------------- */
 
 
+/* 
+    Colors: 
+    Yellow: #FFBE00;
+    Navy: #192B37;
+*/
+
+/* CSS RESET */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/*---------------------------- Universal styles & utility classes  --------------------------------- */
+
+
 /* Padding Utility Classes --------------------  */
 .padded-sm {
     padding: 2.5%;
@@ -363,15 +381,15 @@ a:hover {
     color: white;
 }
 
-.text-small {
+.small-text {
     font-size: 1.5rem;
 }
 
-.text-medium {
+.medium-text {
     font-size: 2rem;
 }
 
-.text-big {
+.big-text {
     font-size: 4.5rem;
 }
 
@@ -379,6 +397,17 @@ a:hover {
     font-size: 1.2rem;
     color: rgb(120, 120, 125);
 }
+
+
+/*  Font Awesome Icons --------------------  */
+.fas,
+.fab {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
 
 /*  Header & Footer styles --------------------  */
 
@@ -394,26 +423,47 @@ header h3 {
     line-height: 1;
 }
 
+nav a {
+    padding: 0.5rem;
+    display: inline-block;
+    border: none;
+}
+
+.logo h2 {
+    margin-bottom: 0;
+}
+
 footer a {
     border: none;
 }
 
-/* Testimonial Block -------------------- */
 
-.quote-icon {
-    font-size: 6rem;
-    display: inline-block;
-    color: rgb(120, 120, 125);
-    line-height: 1;
+/* Mobile Menu Styles */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-/*  Font Awesome Icons --------------------  */
-.fas {
+.mobile-menu a {
     display: block;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
 }
+
+.hamburger-button {
+    position: relative;
+    z-index: 2;
+}
+
+.hamburger-button i {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
 
 /*  Background Images --------------------  */
 
@@ -431,295 +481,214 @@ footer a {
     background-position: 50% 57%;
 }
 
-#page-wrapper {
-    position: relative;
+
+/* Image Gallery */
+
+.gallery [class*="col-"] {
+    padding: 0.5%;
 }
 
-li {
-    list-style: none;
+.gallery .gallery-item {
+    border-bottom: none;
+}
+
+/* Background of gallery when active  */
+.lg-backdrop {
+    background-color: rgb(20, 20, 20);
+}
+
+.lg-backdrop.in {
+    opacity: 0.95;
+}
+
+.lg-sub-html {
+    background-color: rgba(20, 20, 20, 0.95);
 }
 
 
+/* Buttons & Forms --------------------  */
 
-/** global classes styling **/
-
-.container {
-    max-width: 1000px;
+input,
+textarea {
     width: 100%;
-    margin: 0 auto;
+    display: block;
+    margin-bottom: 0.3rem;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
 }
 
-.btn {
-    padding: 0 20px;
-    height: 40px;
-    font-size: 1em;
-    font-weight: 900;
-    text-transform: uppercase;
-    border: 3px black solid;
-    border-radius: 2px;
-    background: transparent;
-    cursor: pointer;
+input:focus,
+textarea:focus {
+    border: 2px solid #FFBE00;
+    outline: none;
+}
+
+.button {
+    padding: 0.5rem 2rem;
+    background-color: #FFBE00;
+    appearance: none;
+    border: 2px solid #FFBE00;
+    color: inherit;
+}
+
+/* Testimonial Block -------------------- */
+
+.quote-icon {
+    font-size: 6rem;
+    display: inline-block;
+    color: rgb(120, 120, 125);
+    line-height: 1;
 }
 
 
 
-.product-header {
-    position: fixed;
-    top: 0;
-    min-height: 75px;
-    padding: 0px 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #eee;
+
+
+
+
+
+
+/* General CSS  Respondive Styles (Apply everywhere unless overrided) */
+
+.show-xs,
+.show-sm,
+.show-md,
+.mobile-menu {
+    display: none;
 }
 
-@media (max-width: 600px) {
-    header {
-        flex-wrap: wrap;
-    }
-}
+/* ------- MD Media Query (64em / 1024px) --------------- */
+/* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */
 
-.logo {
-    width: 60vw;
-}
+@media(max-width:64em) {
 
-@media (max-width: 650px) {
-    .logo {
-        margin-top: 15px;
-        width: 100%;
-        position: relative;
-    }
-}
-
-.logo>img {
-    width: 100%;
-    height: 100%;
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 20px;
-}
-
-@media (max-width: 650px) {
-    .logo>img {
-        margin: 0 auto;
-    }
-}
-
-nav {
-    font-weight: 400;
-}
-
-@media (max-width: 650px) {
-    nav {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0 50px;
+    .show-md {
+        display: block;
     }
 
-    nav li {
-        padding-bottom: 5px;
-    }
-}
-
-nav>ul {
-    width: 35vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-@media (max-width: 650px) {
-    nav>ul {
-        flex-direction: column;
-    }
-}
-
-#hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 200px;
-    margin-top: 50px;
-}
-
-#hero>h2 {
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-
-#hero input[type='email'] {
-    max-width: 275px;
-    width: 100%;
-    padding: 5px;
-}
-
-#hero input[type='submit'] {
-    max-width: 150px;
-    width: 100%;
-    height: 30px;
-    margin: 15px 0;
-    border: 0;
-    background-color: #f1c40f;
-}
-
-#hero input[type='submit']:hover {
-    background-color: orange;
-    transition: background-color 1s;
-}
-
-@media (max-width: 650px) {
-    #hero {
-        margin-top: 120px;
-    }
-}
-
-#features {
-    margin-top: 30px;
-}
-
-#features .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 125px;
-    width: 20vw;
-    color: darkorange;
-}
-
-@media (max-width: 550px) {
-    #features .icon {
+    .hide-md {
         display: none;
     }
+
+    .md-tall-80 {
+        min-height: 80vh;
+    }
+
 }
 
-#features .desc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 125px;
-    width: 80vw;
-    padding: 5px;
-}
+/* ------- SM Media Query (48em / 768px) --------------- */
+/* - Styles added here will apply at devices smaller than 768px, or zoomed in equivalent */
 
-@media (max-width: 550px) {
-    #features .desc {
-        width: 100%;
+
+@media(max-width:48em) {
+
+    html {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .show-sm {
+        display: block;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+
+    .sm-text-center {
         text-align: center;
-        padding: 0;
-        height: 150px;
+    }
+
+    .sm-text-left {
+        text-align: left;
+    }
+
+    .sm-text-right {
+        text-align: right;
+    }
+
+    .sm-padded {
+        padding: 5%;
+    }
+
+    .sm-padded-1 {
+        padding: 1rem;
+    }
+
+    .sm-padded-05 {
+        padding: 0.5rem
+    }
+
+    .sm-padded-t-0 {
+        padding-top: 0;
+    }
+
+    .sm-padded-b-0 {
+        padding-bottom: 0;
+    }
+
+    .sm-margin-l-0 {
+        padding-left: 0;
+    }
+
+    .sm-margin-r-0 {
+        padding-right: 0;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    header h3 {
+        font-size: 11vw;
+    }
+
+
+
+}
+
+/* ------- XS Media Query (36em / 576px) --------------- */
+/* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */
+
+@media(max-width:36em) {
+
+    .show-xs {
+        display: block;
+    }
+
+    .hide-xs {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size: 2rem;
     }
 }
 
-@media (max-width: 650px) {
-    #features {
-        margin-top: 0;
-    }
-}
 
-#how-it-works {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
 
-#how-it-works>iframe {
-    max-width: 560px;
-    width: 100%;
-}
+/* ------- XXS Media Query (25em / 400px) --------------- */
+/* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */
 
-#pricing {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+@media(max-width:25em) {
 
-.product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: calc(100% / 3);
-    margin: 10px;
-    border: 1px solid #000;
-    border-radius: 3px;
-}
-
-.product>.level {
-    background-color: #ddd;
-    color: black;
-    padding: 15px 0;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.product>h2 {
-    margin-top: 15px;
-}
-
-.product>ol {
-    margin: 15px 0;
-}
-
-.product>ol>li {
-    padding: 5px 0;
-}
-
-.product>button {
-    border: 0;
-    margin: 15px 0;
-    background-color: #f1c40f;
-    font-weight: 400;
-}
-
-.product>button:hover {
-    background-color: orange;
-    transition: background-color 1s;
-}
-
-@media (max-width: 800px) {
-    #pricing {
-        flex-direction: column;
+    html {
+        font-size: 12px;
     }
 
-    .product {
-        max-width: 300px;
-        width: 100%;
-        margin: 0 auto;
-        margin-bottom: 10px;
+    [class*="grid"] .xxs-stack {
+        flex-basis: 100%;
+        max-width: 100%;
     }
-}
 
-footer {
-    margin-top: 30px;
-    background-color: #ddd;
-    padding: 20px;
-}
-
-footer>ul {
-    display: flex;
-    justify-content: flex-end;
-}
-
-footer>ul>li {
-    padding: 0 10px;
-}
-
-footer>span {
-    margin-top: 5px;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 0.9em;
-    color: #444;
 }
